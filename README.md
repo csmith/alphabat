@@ -7,7 +7,7 @@ the headset report the correct battery level when pressing the power button.)
 ## Usage
 
 ```shell
-go install github.com/csmith/alphabat/cmd@latest
+go install github.com/csmith/alphabat@latest
 $(go env GOPATH)/bin/alphabat
 ```
 
