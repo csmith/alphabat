@@ -32,14 +32,12 @@ func main() {
 
 	go read(d)
 
-	go func() {
-		time.Sleep(timeout)
-		d.Close()
-	}()
-
 	if _, err := d.Write([]byte{packetPrefix1, packetPrefix2, deviceInfoQuery}); err != nil {
 		os.Exit(3)
 	}
+
+	time.Sleep(timeout)
+	d.Close()
 }
 
 // findDevice returns the first matching headset, or nil.
