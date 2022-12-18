@@ -38,6 +38,7 @@ func main() {
 
 	time.Sleep(timeout)
 	d.Close()
+	os.Exit(125)
 }
 
 // findDevice returns the first matching headset, or nil.
