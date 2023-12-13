@@ -17,6 +17,11 @@ jobs:
       - uses: actions/setup-go@v4
         with:
           go-version: stable
+      - name: Debug
+        run: |
+          echo $PWD
+          ls -alR
+          git status
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v5
         with:
