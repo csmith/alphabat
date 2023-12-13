@@ -7,7 +7,7 @@ the headset report the correct battery level when pressing the power button.)
 ## Usage
 
 ```shell
-go install github.com/csmith/alphabat@latest
+CGO_ENABLED=1 go install github.com/csmith/alphabat@latest
 $(go env GOPATH)/bin/alphabat
 ```
 
@@ -28,10 +28,11 @@ for the reader. (Pull requests to this README gladly accepted!)
 
 If something goes wrong, alphabat will exit with the following status codes:
 
-| Exit code | Meaning                 | Possible cause        |
-|-----------|-------------------------|-----------------------|
-| 1         | Device not found        | Dongle not connected  |
-| 2         | Unable to open device   | No permissions        |
-| 3         | Unable to send data     | ?                     |
-| 4         | Unable to read data     | ?                     |
-| 125       | No response from device | Headset not turned on |
+| Exit code | Meaning                 | Possible cause               |
+|-----------|-------------------------|------------------------------|
+| 1         | Device not found        | Dongle not connected         |
+| 2         | Unable to open device   | No permissions               |
+| 3         | Unable to send data     | ?                            |
+| 4         | Unable to read data     | ?                            |
+| 5         | HID library unavailable | Compiled without cgo enabled |
+| 125       | No response from device | Headset not turned on        |

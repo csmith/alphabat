@@ -19,6 +19,10 @@ const (
 )
 
 func main() {
+	if !hid.Supported() {
+		os.Exit(5)
+	}
+
 	device := findDevice()
 	if device == nil {
 		os.Exit(1)
