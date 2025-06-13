@@ -17,6 +17,10 @@ jobs:
       - uses: actions/setup-go@v4
         with:
           go-version: stable
+      - name: Setup dependencies
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -qqy pkg-config
       - name: Mark dir as safe
         run: git config --global --add safe.directory $PWD
       - name: Run GoReleaser

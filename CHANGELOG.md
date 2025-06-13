@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.1 - 2025-06-13
+
+_No changes to the app, just changes to the build process._
+
 ## 1.4.0 - 2025-06-13
 
 - Dependency updates
