@@ -18,7 +18,7 @@ permission to access them. On Linux, you should add a udev rule along
 the lines of:
 
 ```udev
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="03f0", ATTRS{idProduct}=="098d", MODE="0666"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="03f0", ATTRS{idProduct}=="098d", TAG+="uaccess"
 ```
 
 Sorting permissions out on other operating systems is left as an exercise
