@@ -1,10 +1,11 @@
 package main
 
 import (
+	"errors"
 	"os"
 	"time"
 
-	"github.com/karalabe/hid"
+	"github.com/bearsh/hid"
 )
 
 const (
@@ -60,7 +61,7 @@ func read(d *hid.Device) {
 	var r = make([]byte, 10)
 	for {
 		if _, err := d.Read(r); err != nil {
-			if err == hid.ErrDeviceClosed {
+			if errors.Is(err, hid.ErrDeviceClosed) {
 				os.Exit(125)
 			}
 
